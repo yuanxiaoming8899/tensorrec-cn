@@ -43,31 +43,7 @@
 <span class="pl-c"># Calculate and print the recall at 10</span>
 <span class="pl-s1">r_at_k</span> <span class="pl-c1">=</span> <span class="pl-s1">tensorrec</span>.<span class="pl-s1">eval</span>.<span class="pl-en">recall_at_k</span>(<span class="pl-s1">predicted_ranks</span>, <span class="pl-s1">interactions</span>, <span class="pl-s1">k</span><span class="pl-c1">=</span><span class="pl-c1">10</span>)
 <span class="pl-en">print</span>(<span class="pl-s1">np</span>.<span class="pl-en">mean</span>(<span class="pl-s1">r_at_k</span>))</pre><div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import numpy as np
-import tensorrec
-
-# Build the model with default parameters
-model = tensorrec.TensorRec()
-
-# Generate some dummy data
-interactions, user_features, item_features = tensorrec.util.generate_dummy_data(
-    num_users=100,
-    num_items=150,
-    interaction_density=.05
-)
-
-# Fit the model for 5 epochs
-model.fit(interactions, user_features, item_features, epochs=5, verbose=True)
-
-# Predict scores and ranks for all users and all items
-predictions = model.predict(user_features=user_features,
-                            item_features=item_features)
-predicted_ranks = model.predict_rank(user_features=user_features,
-                                     item_features=item_features)
-
-# Calculate and print the recall at 10
-r_at_k = tensorrec.eval.recall_at_k(predicted_ranks, interactions, k=10)
-print(np.mean(r_at_k))" tabindex="0" role="button">
+    
       <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
     <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
 </svg>
